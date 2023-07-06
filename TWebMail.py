@@ -2011,6 +2011,18 @@ mailsecurityauthrication998smtp_xpby_google =[1991,-997.5]
 mailsecurityauthrication999smtp_xpby_google =[1993,-998.5]
 
 
+
+def loading_animation():
+    animation = "|/-\\"
+    for i in range(10):  
+        time.sleep(0.2) 
+        sys.stdout.write("\r" + "Sending " + animation[i % len(animation)])
+        sys.stdout.flush()
+    input()
+    sys.stdout.write("\n")
+    print("Sending complete!")
+
+
 def clear():
     if os.name == "posix":
         os.system('clear')
@@ -2202,7 +2214,7 @@ def main():
         send_emails(quesN, quesP, quesE, quesEP, list_mails, subject, body)
         print(demo_mail)
         ct()
-        print("SENDING ...")
+        loading_animation()
 
 
 main()
